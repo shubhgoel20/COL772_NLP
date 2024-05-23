@@ -1,4 +1,6 @@
 - [Assignment Description](https://docs.google.com/document/u/1/d/e/2PACX-1vQvXWStVxAV7nVi6uvz37Gmli8rAdKHR3JdgFq2VZoH3mgSPSG3c1YbifR_mHGYS-LVEGeCWKeAqbdJ/pub)
+- [Train Script](./train.py)
+- [Inference Script](./test.py)
 - [Writeup](./writeup.txt)
 
 - The command to train the model is:
