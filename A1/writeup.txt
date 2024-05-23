@@ -1,0 +1,26 @@
+1. Preprocessing
+    - Replaced punctuations and digits in the corpus with space separator
+    - Converted each character to lower case
+
+2. Feature extraction
+    - Used a combination of unigram and bigram features
+    - Used CountVectorizer from sklearn to convert the corpus into sparse matrix containing counts of the feature in each document
+    - Experimented with TdfidfVectorizer. However, CountVectorizer was giving better results
+
+3. Experiments
+    - Experimented with MultinomialNB, LogisticRegression, LinearSVC, SGDClassifier and RandomForestClassifier
+    - RandomForestClassifier was taking too much time to train due to large size of features
+    - MultinomialNB outperformed every other classifier
+    - Experimented with smoothing parameter of MultinomialNB. Smoothing parameter = 5e-5 gave the best results
+
+4. Results of best performing model(MultinomialNB with alpha = 5e-5)
+    - valid.json
+        Micro F1 score: 0.9748846071716026
+        Macro F1 score: 0.9728478023074749
+        Accuracy: 0.98471
+    - valid_new.json
+       Micro F1 score: 0.8453301606186794
+       Macro F1 score: 0.8746332644278186
+       Accuracy: 0.8937040065412919
+5. References
+    - https://scikit-learn.org/stable/supervised_learning.html#supervised-learning
