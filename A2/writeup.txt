@@ -1,0 +1,32 @@
+- Trained two seperate models one for Columns and one for Rows
+- For both the models I have used biLSTM. The num_layers in column model is 2
+- Used fasttext embeddings for tokens. Used nltk for tokenizations
+- In each model, there are two lstms, one for question vector and other for row/column vector
+- First I obtain question embeddings and then row/column embeddings by passing there init embeddings into there respective lstms. 
+  After that I do dot product to get the final scores followed by softmax.
+- For rows I am only predicting the most probable row.
+- Hyperparameters
+    -num_layers of lstms = 2 for column model and 1 for row model
+    -hidden_state dim = 300
+    -inp_dim = 300
+    -learning rate
+     - 3e-3 for column model with step LR scheduler
+     - 3e-4 for row model
+    - batch size = 32
+
+- Citations
+    - Herzig et. al., TAPAS: Weakly Supervised Table Parsing via Pre-training, cs.IR 2020
+
+- Refernces
+    -https://radimrehurek.com/gensim/models/fasttext.html
+    -https://pytorch.org/
+    -https://radimrehurek.com/gensim/auto_examples/index.html
+
+- Libraries used
+    torch
+    numpy
+    gensim
+    pandas
+    nltk
+    tqdm
+    gdown
