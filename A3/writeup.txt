@@ -1,0 +1,12 @@
+Done in Groups of Two
+Team Members - Shubh Goel and Raj Shah
+We noticed that a major part of the summary comes from the abstract and the conclusion. To address the limited token size input taken by the pretrained models, we took only these segments of the model truncated to 512 tokens to generate the summaries. We tried both flan-t5-base and biogpt models. For the biogpt model, we concatenated the first 600 tokens of the prompt and 400 tokens of the summary for the inputs (and labels were same as inputs since it is a decoder-only model).
+
+Ultimately, we got better results with the flan-t5-base model, so we use that model. We used LORA with a rank of 32 implemented in the peft library, and modelled the task as a Seq2SeqLM task. 
+
+Helpful references:
+https://pashpashpash.substack.com/p/tackling-the-challenge-of-document
+https://pashpashpash.substack.com/p/understanding-long-documents-with
+https://youtu.be/vt3KiTgLFDs?si=Pc6WfXCajXiCc4Jy
+https://youtu.be/msgLLudzlLg?si=sZtvkNB1za4_qo3o
+https://huggingface.co/docs/transformers/en/training
